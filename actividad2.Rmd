@@ -1,0 +1,65 @@
+---
+title: "Actividad 2"
+author: |
+  Adrada Isabel, De la Peña Juan, Terán Federico, Troncoso Samuel    
+  Pontificia Universidad Javeriana Cali
+output:
+  pdf_document:
+    latex_engine: xelatex
+    keep_tex: true
+    extra_dependencies: ["booktabs", "array", "float", "longtable"]
+header-includes:
+  - \usepackage{multicol}
+  - \usepackage{longtable}
+  - \setlength{\columnsep}{1cm}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+#Instalación de las libreriás requeridas
+library(ggplot2)
+library(dplyr)
+library(GGally)
+library(xtable)
+library(readr)
+library(knitr)
+library(forcats)
+library(tidyr)
+library(kableExtra)
+```
+
+\begin{multicols}{2}
+
+\section{Resumen}
+...
+
+\section{Key words}
+...
+
+\section{Introducción}
+...
+
+```{r dataframes, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+#Organización en dataframes
+
+```
+
+\section{Métodos}
+...
+
+\section{Resultados}
+...
+
+\section{Análisis de resultados}
+...
+
+\section{Conclusiones}
+...
+
+\section{Referencias}
+...
+
+\end{multicols}
