@@ -40,18 +40,84 @@ library(kableExtra)
 \section{Introducción}
 ...
 
-```{r dataframes, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-
-#Organización en dataframes
-
-```
-
 \section{Métodos}
 ...
 
+En primer lugar, se generaron aleatoriamente 1000 números entre 1 y 100000, los cuáles representan la población objetivo del presente estudio mediante la función sample.
+
+```{r dataframe, echo=TRUE}
+datos <- sample(0:1000, 1000, replace = TRUE)
+```
+
+El promedio de la población objetivo de los 1000 números se obtuvo utilizando la función mean sobre el vector datos generado anteriormente.
+```{r promedio, echo=TRUE}
+promedio <- mean(datos)
+```
+
+Para generar una tabla de frecuencia de la población, se realizaron k  intérvalos, donde k es igual a 10, con un ancho de (Max - Min)/k por intérvalo. El conteo de la cantidad de datos dentro de un determinado conforma la frecuencia absoluta, se presenta además la frecuencia relativa, frecuencia absoluta acumulada y frecuencia relativa acumulada.
+
 \section{Resultados}
-...
+
+
+
+\end{multicols}
+```{r tabla1}
+ancho <- (max(datos) - min(datos))/10
+
+# Crear intervalos
+cortes <- seq(min(datos), max(datos), by = ancho)
+etiquetas <- character(length(cortes)-1)
+etiquetas[1] <- paste0("[", round(cortes[1], 2), ", ", round(cortes[2], 2), "]")
+if(length(cortes) > 2) {
+  for(i in 2:(length(cortes)-1)) {
+    etiquetas[i] <- paste0("(", round(cortes[i], 2), ", ", round(cortes[i+1], 2), "]")
+  }
+}
+intervalos <- cut(datos, breaks = cortes, labels = etiquetas, include.lowest = TRUE, right = TRUE)
+
+# Calcular frecuencias
+frec_abs <- table(intervalos)
+frec_rel <- prop.table(frec_abs)
+frec_abs_acum <- cumsum(frec_abs)
+frec_rel_acum <- cumsum(frec_rel)
+
+# Crear la tabla de frecuencias
+tabla_frecuencias_commercial <- data.frame(
+  Intervalo = levels(intervalos),
+  "F Absoluta" = as.numeric(frec_abs),
+  "F Relativa" = round(as.numeric(frec_rel), 2),
+  "F Abs Acum" = as.numeric(frec_abs_acum),
+  "F Rel Acum" = round(as.numeric(frec_rel_acum), 2)
+)
+
+# Ajustar diseño de la cámara 
+knitr::kable(tabla_frecuencias_commercial, 
+             caption = "Frecuencia de los datos",
+             align = c('l', 'c', 'c', 'c', 'c'))
+
+```
+\begin{multicols}{2}
+
+```{r figura1}
+
+histograma <- ggplot(data.frame(datos = datos), aes(x = datos)) +
+  geom_histogram(bins = 10, fill = "steelblue", color = "white", boundary = 0) +
+  labs(x = "Intérvalos", y = "Frecuencia") +
+  scale_x_continuous(limits = c(0, NA), expand = c(0, 0)) +
+  scale_y_continuous(limits = c(0, NA), expand = c(0, 0)) +
+  theme_minimal() +
+  theme(panel.grid.minor = element_blank())
+
+ggsave( filename = "figura1.png", plot = histograma,
+  width = 6, height = 4, dpi = 150
+)
+
+```
+\begin{center}
+\includegraphics[width=\linewidth]{figura1.png}
+\end{center}
+Figura 1. Distribución de los datos.
+
 
 \section{Análisis de resultados}
 ...

@@ -1,0 +1,183 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{multicol}
+\usepackage{longtable}
+\setlength{\columnsep}{1cm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Actividad 2},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Actividad 2}
+\author{Adrada Isabel, De la Peña Juan, Terán Federico, Troncoso
+Samuel\\
+Pontificia Universidad Javeriana Cali}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{multicols}{2}
+
+\section{Resumen}
+...
+
+\section{Key words}
+...
+
+\section{Introducción}
+...
+
+\section{Métodos}
+...
+
+En primer lugar, se generaron aleatoriamente 1000 números entre 1 y 100000, los cuáles representan la población objetivo del presente estudio mediante la función sample.
+
+
+``` r
+datos <- sample(0:1000, 1000, replace = TRUE)
+```
+
+El promedio de la población objetivo de los 1000 números se obtuvo utilizando la función mean sobre el vector datos generado anteriormente.
+
+``` r
+promedio <- mean(datos)
+```
+
+Para generar una tabla de frecuencia de la población, se realizaron k  intérvalos, donde k es igual a 10, con un ancho de (Max - Min)/k por intérvalo. El conteo de la cantidad de datos dentro de un determinado conforma la frecuencia absoluta, se presenta además la frecuencia relativa, frecuencia absoluta acumulada y frecuencia relativa acumulada.
+
+\section{Resultados}
+
+
+
+\end{multicols}
+
+\begin{longtable}[]{@{}lcccc@{}}
+\caption{Frecuencia de los datos}\tabularnewline
+\toprule\noalign{}
+Intervalo & F.Absoluta & F.Relativa & F.Abs.Acum & F.Rel.Acum \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+Intervalo & F.Absoluta & F.Relativa & F.Abs.Acum & F.Rel.Acum \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+{[}0, 99.9{]} & 92 & 0.09 & 92 & 0.09 \\
+(99.9, 199.8{]} & 100 & 0.10 & 192 & 0.19 \\
+(199.8, 299.7{]} & 99 & 0.10 & 291 & 0.29 \\
+(299.7, 399.6{]} & 104 & 0.10 & 395 & 0.40 \\
+(399.6, 499.5{]} & 84 & 0.08 & 479 & 0.48 \\
+(499.5, 599.4{]} & 85 & 0.09 & 564 & 0.56 \\
+(599.4, 699.3{]} & 116 & 0.12 & 680 & 0.68 \\
+(699.3, 799.2{]} & 103 & 0.10 & 783 & 0.78 \\
+(799.2, 899.1{]} & 97 & 0.10 & 880 & 0.88 \\
+(899.1, 999{]} & 120 & 0.12 & 1000 & 1.00 \\
+\end{longtable}
+
+\begin{multicols}{2}
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{figura1.png}
+\end{center}
+Figura 1. Distribución de los datos.
+
+
+\section{Análisis de resultados}
+...
+
+\section{Conclusiones}
+...
+
+\section{Referencias}
+...
+
+\end{multicols}
+
+\end{document}
