@@ -22,7 +22,6 @@ library(ggplot2)
 library(dplyr)
 library(GGally)
 library(xtable)
-library(readr)
 library(knitr)
 library(forcats)
 library(tidyr)
@@ -46,7 +45,13 @@ library(kableExtra)
 En primer lugar, se generaron aleatoriamente 1000 números entre 1 y 100000, los cuáles representan la población objetivo del presente estudio mediante la función sample.
 
 ```{r dataframe, echo=TRUE}
-datos <- sample(0:1000, 1000, replace = TRUE)
+poblacion <- sample(0:1000, 1000, replace = TRUE)
+```
+
+```{r load, echo=FALSE}
+library(readr)
+info <- read_csv("datos.csv", col_types = cols(.default = col_integer()))
+datos <- as.numeric(unlist(info))
 ```
 
 El promedio de la población objetivo de los 1000 números se obtuvo utilizando la función mean sobre el vector datos generado anteriormente.
