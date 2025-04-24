@@ -32,14 +32,14 @@ library(kableExtra)
 \begin{multicols}{2}
 
 \section{Resumen}
-...
+Este estudio explora las propiedades estadísticas de una población simulada de 1000 números aleatorios y sus muestras, validando el Teorema del Límite Central (TLC). Mediante el análisis de distribuciones de frecuencias, histogramas y medias muestrales
 
 \section{Key words}
-...
+Teorema del Límite Central, Distribución muestral, Media muestral, Inferencia estadística.
 
 \section{Introducción}
 
-... ... según Navidi [1] ...
+En estadística, el Teorema del Límite Central (TLC) es un pilar fundamental que justifica la aproximación normal de las medias muestrales, independientemente de la distribución de la población original [1]. Este trabajo analiza una población simulada de 1000 datos generados aleatoriamente (0-1000) y sus muestras
 
 \section{Métodos}
 En primer lugar, se generaron aleatoriamente 1000 números entre 1 y 100000, los cuáles representan la población objetivo del presente estudio mediante la función sample.
@@ -88,6 +88,8 @@ prom3 <- mean(muestra3)
 prom4 <- mean(muestra4)
 prom5 <- mean(muestra5)
 ```
+
+Posteriormente, se graficó un histograma con las frecuencias delos promedios de las muestras de tamaño 10 con el objetivo de evaluar la forma de la distribución.
 
 
 \section{Resultados}
@@ -173,28 +175,29 @@ Muestra 4: `r muestra4`
 Muestra 5: `r muestra5`
 
 Estas muestras tienen los promedios muestrales `r prom1`, `r prom2`, `r prom3`, `r prom4` y `r prom5` respectivamente, mostrando una alta variabilidad de la media de las muestras obtenidas.
+
+Los promedios de las muestras de tamaño 10 siguen una distribución aproximadamente normal (en forma de campana de Gauss), a pesar de que la población original no necesariamente tenga esta forma. Esto se debe al Teorema del Límite Central (TLC), que establece que, bajo condiciones generales, la distribución de las medias muestrales se aproxima a una normal a medida que aumenta el tamaño de la muestra, incluso si los datos originales no son normales.
+
  
+```{r, fig.cap="Figura2: Distribución de frecuencias de la población", out.width="100%", fig.pos="H"}
+knitr::include_graphics("prom_muestrales.png")
+```
+
+El promedio de las medias muestrales resulta casi idéntico al de la población, confirmando que la media muestral es un estimador insesgado. Por otro lado, la dispersión de las medias muestrales es notablemente menor que la de la población original, lo que concuerda con la teoría estadística: la varianza de las medias disminuye proporcionalmente al tamaño de la muestra (σ²/n). Esto explica por qué muestras más grandes producen estimaciones más precisas.
+Con muestras pequeñas (como n >=10), la aproximación a la normal puede no ser perfecta, pero ya se observa una tendencia hacia la simetría y concentración alrededor de la media poblacional. Si el tamaño de muestra fuera mayor (ej. n > =30), la distribución sería aún más claramente normal.
 
 \section{Análisis de resultados}
 
 A partir de los resultados obtenidos se puede determinar que la distribución de los datos generados aleatoriamente como población tiene una distribución prbabilística relativamente similar a la distribución uniforme.
 
-Al obtener muestras de 10 datos de la población se encuentra que las medias de las diferentes muestras presentan una significativa variación entre sí
+Al obtener muestras de 10 datos de la población se encuentra que las medias de las diferentes muestras presentan una significativa variación entre sí.
 
-\section{Análisis de artículos científicos}
-"Method for Optimal Allocation of Network Resources Based on Discrete Probability Model" de Zhengqiang Song y Guo Hao [2] propone un modelo innovador basado en probabilidad discreta para optimizar la asignación de recursos en redes de sensores inalámbricos. Este enfoque incluye coberturas múltiples, lo que permite evaluar puntos monitoreados por varios nodos simultáneamente; un análisis de fuerzas virtuales que optimiza la disposición de los nodos mediante interacciones probabilísticas; y un algoritmo de cobertura diseñado para rutas móviles, que mejora la cobertura en trayectorias dinámicas al adaptarse a los cambios en tiempo real.
-
-Los experimentos realizados muestran que el método tiene una excelente convergencia, logrando optimizar recursos en un tiempo limitado y reduciendo significativamente el consumo energético. Esto se consigue a través de la implementación de estados diferenciados para los nodos (activo, crítico y reposo), lo que permite un uso eficiente de los recursos disponibles. Además, el enfoque minimiza redundancias y maximiza la eficiencia, mejorando la cobertura del área monitoreada.
-
-Este trabajo resulta especialmente relevante para estudiantes y profesionales de Ingeniería de Sistemas y Electrónica, ya que impulsa avances en el IoT mediante redes inalámbricas más eficientes, prolonga la vida útil de los sensores y proporciona un marco metodológico versátil y aplicable tanto a sistemas embebidos como a redes dinámicas.
-
+Este ejercicio práctico valida tres principios clave: (1) el Teorema del Límite Central, pues las medias muestrales siguen una distribución normal aunque la población no lo haga; (2) la media muestral es un estimador robusto de la media poblacional; y (3) el muestreo reduce la variabilidad, permitiendo inferencias confiables incluso con muestras pequeñas. Estos hallazgos justifican el uso de técnicas estadísticas basadas en muestras para analizar poblaciones grandes
 
 \section{Conclusiones}
 ...
 
 \section{Referencias}
 [1]   W. Navidi, Statistics for Engineers and Scientists w/ CD-ROM. McGraw-Hill Sci./Eng./Math, 2004.
-
-[2] Zhengqiang Song, Guo Hao. (2022). Method for optimal allocation of network resources based on discrete probability model. Wireless Networks, 28, 2743–2754. 
 
 \end{multicols}
