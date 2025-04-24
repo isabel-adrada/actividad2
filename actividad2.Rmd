@@ -190,11 +190,16 @@ Este trabajo resulta especialmente relevante para estudiantes y profesionales de
 
 
 \section{Conclusiones}
-...
+
+En este estudio, se analizó una población aleatoria de 1000 datos para evaluar sus características estadísticas y distribución probabilística. Los resultados indican que la distribución es relativamente uniforme, aunque con ligeras variaciones entre los intervalos. Las medidas estadísticas, como la media, mediana y moda, confirmaron que los datos no presentan una distribución normal. Además, las muestras aleatorias extraídas de la población mostraron una alta variabilidad en sus medias, destacando la importancia de la representatividad muestral.
+
+Por otro lado, se revisó el artículo científico "Method for Optimal Allocation of Network Resources Based on Discrete Probability Model" de Zhengqiang Song y Guo Hao. Este trabajo propone un modelo innovador para optimizar recursos en redes inalámbricas, mejorando la eficiencia y minimizando el consumo energético mediante análisis probabilísticos y algoritmos adaptativos. Su relevancia radica en los avances que aporta al Internet de las Cosas (IoT) y las redes dinámicas.
+
+En conclusión, tanto el análisis estadístico como la revisión del artículo destacan el valor de los modelos probabilísticos para abordar problemas complejos, desde la evaluación de datos hasta la optimización de sistemas tecnológicos.
 
 \section{Referencias}
 [1]   W. Navidi, Statistics for Engineers and Scientists w/ CD-ROM. McGraw-Hill Sci./Eng./Math, 2004.
 
-[2] Zhengqiang Song, Guo Hao. (2022). Method for optimal allocation of network resources based on discrete probability model. Wireless Networks, 28, 2743–2754. 
+[2]   Z. Song and G. Hao, "Method for optimal allocation of network resources based on discrete probability model," Wireless Networks, 2022. DOI: 10.1007/s11276-021-02727-7.
 
 \end{multicols}
