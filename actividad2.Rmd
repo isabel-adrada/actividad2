@@ -40,6 +40,7 @@ Teorema del Límite Central, Distribución muestral, Media muestral, Inferencia 
 \section{Introducción}
 
 En estadística, el Teorema del Límite Central (TLC) es un pilar fundamental que justifica la aproximación normal de las medias muestrales, independientemente de la distribución de la población original [1]. Este trabajo analiza una población simulada de 1000 datos generados aleatoriamente (0-1000) y sus muestras
+En esta actividad aplicamos conceptos de estadística descriptiva para analizar una población generada aleatoriamente. Calculamos medidas comola media, mediana, moda y construimos tablas defrecuencias e histogramas para estudiar su comportamiento. Además, obtuvimos muestras aleatoriaspara comparar sus promedios con el de la poblacióntotal y analizar la variabilidad entre ellas.Complementamos este trabajo con el análisis de dosartículos científicos relacionados con las distribuciones probabilísticas: una discreta, enfocada en laoptimización de recursos en redes inalámbricas, yotra continua, aplicada al modelado de sistemas decolas. Esto nos permitió conectar la teoría con aplicaciones reales, reforzando nuestra comprensión delpapel que juegan estas distribuciones en diferentescontextos de la ingeniería.
 
 \section{Métodos}
 En primer lugar, se generaron aleatoriamente 1000 números entre 1 y 100000, los cuáles representan la población objetivo del presente estudio mediante la función sample.
@@ -179,9 +180,10 @@ Estas muestras tienen los promedios muestrales `r prom1`, `r prom2`, `r prom3`, 
 Los promedios de las muestras de tamaño 10 siguen una distribución aproximadamente normal (en forma de campana de Gauss), a pesar de que la población original no necesariamente tenga esta forma. Esto se debe al Teorema del Límite Central (TLC), que establece que, bajo condiciones generales, la distribución de las medias muestrales se aproxima a una normal a medida que aumenta el tamaño de la muestra, incluso si los datos originales no son normales.
 
  
-```{r, fig.cap="Figura2: Distribución de frecuencias de la población", out.width="100%", fig.pos="H"}
+```{r, out.width="100%", fig.pos="H"}
 knitr::include_graphics("prom_muestrales.png")
 ```
+Figura2: Distribución de frecuencias de la población.
 
 El promedio de las medias muestrales resulta casi idéntico al de la población, confirmando que la media muestral es un estimador insesgado. Por otro lado, la dispersión de las medias muestrales es notablemente menor que la de la población original, lo que concuerda con la teoría estadística: la varianza de las medias disminuye proporcionalmente al tamaño de la muestra (σ²/n). Esto explica por qué muestras más grandes producen estimaciones más precisas.
 Con muestras pequeñas (como n >=10), la aproximación a la normal puede no ser perfecta, pero ya se observa una tendencia hacia la simetría y concentración alrededor de la media poblacional. Si el tamaño de muestra fuera mayor (ej. n > =30), la distribución sería aún más claramente normal.
@@ -194,10 +196,25 @@ Al obtener muestras de 10 datos de la población se encuentra que las medias de 
 
 Este ejercicio práctico valida tres principios clave: (1) el Teorema del Límite Central, pues las medias muestrales siguen una distribución normal aunque la población no lo haga; (2) la media muestral es un estimador robusto de la media poblacional; y (3) el muestreo reduce la variabilidad, permitiendo inferencias confiables incluso con muestras pequeñas. Estos hallazgos justifican el uso de técnicas estadísticas basadas en muestras para analizar poblaciones grandes
 
+\section{Análisis artículo: distribución continua
+}
+En el artículo An Application to Continuous Probability Distribution, escrito por B. V. Dhandra y S. S. Kalyani, se presenta un enfoque práctico sobre el uso de distribuciones de probabilidad continuas para analizar el comportamiento de sistemas de colas. Este trabajo se enfoca en modelar la acumulación de personas en distintos escenarios usando funciones de densidad, destacando su aplicabilidad en contextos urbanos y rurales.
+
+El artículo presenta una aplicación de las distribuciones de probabilidad continuas para modelar la cantidad de personas que se acumulan en un sistema de colas durante un intervalo de tiempo. A través del uso de funciones de densidad, se logra estimar con mayor precisión la probabilidad de que cierto número de personas esté presente en el sistema, lo cual es esencial para evaluar la eficiencia de distintos entornos de atención, como sucursales bancarias urbanas y rurales.
+
+Se realizaron comparaciones entre dos sistemas de colas con diferentes tasas de llegada (λ), observando que un mayor valor de λ genera una mayor acumulación de personas, lo que indica menor eficiencia operativa. A través de esta técnica se pueden tomar decisiones basadas en datos para mejorar la asignación de recursos y la planificación de atención al cliente.
+
+Este estudio resulta especialmente relevante para estudiantes y profesionales de Ingeniería de Sistemas, ya que proporciona herramientas matemáticas para el modelado de sistemas reales. Además, promueve el uso de distribuciones probabilísticas como base para simulaciones, análisis de rendimiento y optimización de procesos, habilidades claves en áreas como redes, ingeniería del software y sistemas inteligentes.
+
 \section{Conclusiones}
-...
+En este estudio, se analizó una población aleatoria de 1000 datos para evaluar sus características estadísticas y distribución probabilística. Los resultados indican que la distribución es relativamente uniforme, aunque con ligeras variaciones entre los intervalos. Las medidas estadísticas, como la media, mediana y moda,4 confirmaron que los datos no presentan una distribución normal. Además, las muestras aleatorias extraídas de la población mostraron una alta variabilidad en sus medias, destacando la importancia de la representatividad muestral. Por otro lado, se revisó el artículo científico “Method for Optimal Allocation of Network Resources Based on Discrete Probability Model” de Zhengqiang Song y Guo Hao. Este trabajo propone un modelo innovador para optimizar recursos en redes inalámbricas, mejorando la eficiencia y minimizando el consumo energético mediante análisis probabilísticos y algoritmos adaptativos. Su relevancia radica en los avances que aporta al Internet de las Cosas (IoT) y las redes dinámicas.
+
+En conclusión, tanto el análisis estadístico como la revisión del artículo destacan el valor de los modelos probabilísticos para abordar problemas complejos, desde la evaluación de datos hasta la optimización de sistemas tecnológicos.
 
 \section{Referencias}
 [1]   W. Navidi, Statistics for Engineers and Scientists w/ CD-ROM. McGraw-Hill Sci./Eng./Math, 2004.
 
+[2] Z. Song and G. Hao, “Method for optimal allocation of network resources based on discrete probability.
+
+[3] B. V. Dhandra and S. S. Kalyani, "An Application to Continuous Probability Distribution," Jul. 2023. model,” Wireless Networks, 2022. DOI: 10.1007/s11276-021-02727-7.
 \end{multicols}

@@ -118,4 +118,3 @@ comparacion_promedios <- data.frame(
   Diferencia = prom_poblacion - prom_medias
 )
 
-Diferencia
