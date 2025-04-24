@@ -181,10 +181,21 @@ A partir de los resultados obtenidos se puede determinar que la distribución de
 
 Al obtener muestras de 10 datos de la población se encuentra que las medias de las diferentes muestras presentan una significativa variación entre sí
 
+\section{análisis de artículos científicos}
+
+"Method for Optimal Allocation of Network Resources Based on Discrete Probability Model" de Zhengqiang Song y Guo Hao (2022) propone un modelo innovador basado en probabilidad discreta para optimizar la asignación de recursos en redes de sensores inalámbricos. Este enfoque incluye coberturas múltiples, lo que permite evaluar puntos monitoreados por varios nodos simultáneamente; un análisis de fuerzas virtuales que optimiza la disposición de los nodos mediante interacciones probabilísticas; y un algoritmo de cobertura diseñado para rutas móviles, que mejora la cobertura en trayectorias dinámicas al adaptarse a los cambios en tiempo real.
+
+Los experimentos realizados muestran que el método tiene una excelente convergencia, logrando optimizar recursos en un tiempo limitado y reduciendo significativamente el consumo energético. Esto se consigue a través de la implementación de estados diferenciados para los nodos (activo, crítico y reposo), lo que permite un uso eficiente de los recursos disponibles. Además, el enfoque minimiza redundancias y maximiza la eficiencia, mejorando la cobertura del área monitoreada.
+
+Este trabajo resulta especialmente relevante para estudiantes y profesionales de Ingeniería de Sistemas y Electrónica, ya que impulsa avances en el IoT mediante redes inalámbricas más eficientes, prolonga la vida útil de los sensores y proporciona un marco metodológico versátil y aplicable tanto a sistemas embebidos como a redes dinámicas.
+
+
 \section{Conclusiones}
 ...
 
 \section{Referencias}
 [1]   W. Navidi, Statistics for Engineers and Scientists w/ CD-ROM. McGraw-Hill Sci./Eng./Math, 2004.
+
+- Zhengqiang Song, Guo Hao. (2022). Method for optimal allocation of network resources based on discrete probability model. Wireless Networks, 28, 2743–2754. 
 
 \end{multicols}
